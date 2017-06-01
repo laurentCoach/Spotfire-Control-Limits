@@ -162,3 +162,32 @@ Dans cette partie l'utilisateur peur voir le nombre de points OOC qu'il y a par 
 Lorsque l'utilisateur a fini de saisir ses propres limites de contrôles, il peut recalculer le nombre de ponts OOC par lots.
 
 ![ScreenShot](OOCU.PNG)
+
+Code R pour le calcul des OOC utilisateur:
+```
+#Select column in raw data
+RAWDATA<-RAWDATA[,c("LOT","PARAMETER","SITE_VALUE")]
+#Rename colmuns
+colnames(RAWDATA)<-c("LOT","parameter","SITE_VALUE")
+
+#select column in NEW_CONTROL_LIMIT
+NCL<-NCL[,c("parameter","parameterType","LCL","UCL")]
+
+#Merge 3 data.frames (RAW_DATA, NEW_CONTROL_LIMIT, USER_CONTROL_LIMIT)
+new<-Reduce(function(x, y) merge(x, y, all=TRUE), list(RAWDATA, NCL, UCL))
+
+#Select only rows with parameterType != NA
+new<-subset(new, !is.na(new$parameterType))
+
+#Transform in matrix
+newMatrix<-as.matrix(new[,5:8])
+for (i in 1:nrow(newMatrix)) {  
+    if(is.na(newMatrix[i,3])){    
+        newMatrix[i,3]<-newMatrix[i,1]    
+        newMatrix[i,4]<-newMatrix[i,2]  }}
+        
+#Transform matrix in data.frame
+newMatrix<-data.frame(newMatrix)
+#Merge 
+new<-cbind(new[,1:4],newMatrix)
+```
