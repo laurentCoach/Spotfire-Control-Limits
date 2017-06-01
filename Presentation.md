@@ -20,8 +20,14 @@ La deuxième partie est la réalisation d'une application sur Spotfire sous form
 
 Les limites de contrôles permettent de déterminer le moment où apparaît une cause particulière de variation d'une caractéristique, entraînant une altération du processus.
 
-
 ![ScreenShot](CL.PNG)
+
+###### Point Out Of Control (OOC)
+
+Un point OOC est un point qui dépasse les limites de contrôles, que ce soit la haute
+ou la basse limite. 
+
+![ScreenShot](OOC.PNG)
 
 ### Description de l'application
 
@@ -38,7 +44,6 @@ qui sont déjà présentes en base de données.
 ### Relation entre les tables
 
 ![ScreenShot](table.PNG)
-
 
 
 1 – Sélection des lots
@@ -70,13 +75,13 @@ Il a été développé en HTML, CSS et JavaScript.
 
 ![ScreenShot](menu.PNG)
 
-#### Etape 2 : Sélection des données
+#### Etape 2 : Sélection des lots
 Présenté dans une table, l'utilisateur peut sélectionner des données qui lui serviront à charger de nouvelles données qui seront nécessaire aux calculs.
 
 ![ScreenShot](CharData.PNG)
 
-#### Etape 3 : Cahrgement des données pour les calculs
-La table de sélection des données et la table des données pour les calculs sont liées par une relation entre 2 variables. Cela permet de charger les données pour les calculs en fonction des données sélectionnées dans l'étape 2.
+#### Etape 3 : Chargement des données pour les calculs
+La table de sélection des lots et la table des données pour les calculs sont liées par une relation entre 2 variables. Cela permet de charger les données pour les calculs en fonction des données sélectionnées dans l'étape 2.
 Le chargement des données se fait à l'aide d'un bouton codé en python.
 
 ```
@@ -146,3 +151,14 @@ NUCL<-Reduce(function(x, y) merge(x, y, all=TRUE),list(output, NCL))
 ###### Résultats utilisateur
 
 ![ScreenShot](UserCLG.PNG)
+
+
+#### Etape 6 : Visualisation du nombre de point OOC par lots
+Dans cette partie l'utilisateur peur voir le nombre de points OOC qu'il y a par lots.
+
+![ScreenShot](OOCL.PNG)
+
+#### Etape 7 : Recalcul du nombre de point OOC par lots
+Lorsque l'utilisateur a fini de saisir ses propres limites de contrôles, il peut recalculer le nombre de ponts OOC par lots.
+
+![ScreenShot](OOCU.PNG)
