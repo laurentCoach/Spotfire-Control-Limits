@@ -20,7 +20,7 @@ La deuxième partie est la réalisation d'une application sur Spotfire sous form
 
 Les limites de contrôles permettent de déterminer le moment où apparaît une cause particulière de variation d'une caractéristique, entraînant une altération du processus.
 
-![ScreenShot](CL.PNG)
+![ScreenShot](image/CL.PNG)
 
 ###### Point Out Of Control (OOC)
 
