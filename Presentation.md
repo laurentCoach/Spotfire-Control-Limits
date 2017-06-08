@@ -27,7 +27,7 @@ Les limites de contrôles permettent de déterminer le moment où apparaît une 
 Un point OOC est un point qui dépasse les limites de contrôles, que ce soit la haute
 ou la basse limite. 
 
-![ScreenShot](OOC.PNG)
+![ScreenShot](image/OOC.PNG)
 
 ### Description de l'application
 
@@ -39,11 +39,11 @@ Chaque sous projet se divise en 2 parties. Une partie calcul
 des limites de contrôles et une partie visualisation des limites de contrôles
 qui sont déjà présentes en base de données.
 
-![ScreenShot](ShApplication.PNG)
+![ScreenShot](image/ShApplication.PNG)
 
 ### Relation entre les tables
 
-![ScreenShot](table.PNG)
+![ScreenShot](image/table.PNG)
 
 
 1 – Sélection des lots
@@ -73,12 +73,12 @@ fonction des données qui sont sélectionnées dans la table mère.
 Afin que l'utilisateur puisse se déplacer dans l'application, il a fallu créer un menu qui est présent dans toutes les pages. 
 Il a été développé en HTML, CSS et JavaScript.
 
-![ScreenShot](menu.PNG)
+![ScreenShot](image/menu.PNG)
 
 #### Etape 2 : Sélection des lots
 Présenté dans une table, l'utilisateur peut sélectionner des données qui lui serviront à charger de nouvelles données qui seront nécessaire aux calculs.
 
-![ScreenShot](CharData.PNG)
+![ScreenShot](image/CharData.PNG)
 
 #### Etape 3 : Chargement des données pour les calculs
 La table de sélection des lots et la table des données pour les calculs sont liées par une relation entre 2 variables. Cela permet de charger les données pour les calculs en fonction des données sélectionnées dans l'étape 2.
@@ -114,7 +114,7 @@ Lorsque les données pour les calculs sont chargées, l'utilisateur peut à l'ai
 ###### Résultats
 Les limites de contrôles calculées sont affichées en noir.
 
-![ScreenShot](Result.PNG)
+![ScreenShot](image/Result.PNG)
 
 #### Etape 5 : Insertion limites de contrôles par l'utilisateur
 
@@ -122,7 +122,7 @@ Si l'utilisateur veut élargir ou ressérer les limites de contrôles, il peut s
 
 Interface de saisie :
 
-![ScreenShot](Insert.PNG)
+![ScreenShot](image/Insert.PNG)
 
 Code R pour insérer les nouvelles limites dans la table pour les afficher dans les graphes
 ```
@@ -150,18 +150,18 @@ NUCL<-Reduce(function(x, y) merge(x, y, all=TRUE),list(output, NCL))
 
 ###### Résultats utilisateur
 
-![ScreenShot](UserCLG.PNG)
+![ScreenShot](image/UserCLG.PNG)
 
 
 #### Etape 6 : Visualisation du nombre de point OOC par lots
 Dans cette partie l'utilisateur peur voir le nombre de points OOC qu'il y a par lots.
 
-![ScreenShot](OOCL.PNG)
+![ScreenShot](image/OOCL.PNG)
 
 #### Etape 7 : Recalcul du nombre de point OOC par lots
 Lorsque l'utilisateur a fini de saisir ses propres limites de contrôles, il peut recalculer le nombre de ponts OOC par lots.
 
-![ScreenShot](OOCU.PNG)
+![ScreenShot](image/OOCU.PNG)
 
 Code R pour le calcul des OOC utilisateur:
 ```
